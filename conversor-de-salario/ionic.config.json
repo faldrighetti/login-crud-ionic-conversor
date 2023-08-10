@@ -1,0 +1,7 @@
+{
+  "name": "conversor-de-salario",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
