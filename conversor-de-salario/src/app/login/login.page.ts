@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
-import { AngularFireAuthModule } from "@angular/fire/compat/auth";
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -23,7 +21,6 @@ export class LoginPage implements OnInit {
 
   async logUserIn(){
     const user = await this.ngFireAuth.signInWithEmailAndPassword(this.user.email, this.user.password);
-    console.log(user);
 
     if(user!.user!.email){
       this.router.navigate(['/home']);
@@ -34,7 +31,7 @@ export class LoginPage implements OnInit {
 
   async register(){
     const user = await this.ngFireAuth.createUserWithEmailAndPassword(this.user.email, this.user.password);
-    console.log(user);
+   
     if(user!.user!.email){
       alert('Registration successful!');
     } else {
