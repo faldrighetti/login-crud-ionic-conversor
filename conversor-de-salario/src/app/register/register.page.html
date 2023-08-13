@@ -8,14 +8,14 @@
   <ion-card>
     <ion-card-content>
       <ion-item>
-        <!--Acá va el input del mail-->
-      </ion-item>
-      <br>
-      <ion-item>
         <ion-input [(ngModel)]="user.email" placeholder="Username" required></ion-input>
       </ion-item>
       <br>
-      <ion-input [(ngModel)]="user.password" placeholder="Password" type="password" required></ion-input>
+      <ion-item>
+        <ion-input [(ngModel)]="user.password" placeholder="Password" type="password" required></ion-input>
+      </ion-item>
+      <br>
+      <ion-button (click)="register()" color="success">Register</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  currencies = ['USD', 'BRL', 'EUR', 'GBP', 'JPY'];
+ 
+  salary = '';
+  results = this.salary + 10;
+  base = 'ARS';
 
+  constructor(){
+    this.results = this.results + 10;
+  }
+  
 }
