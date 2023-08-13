@@ -6,22 +6,21 @@
 
 <ion-content [fullscreen]="true">
   <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
     <ion-card-header>
       <ion-card-title>Conversor de salario</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
       <ion-item>
-        <ion-input [(ngModel)]="user.email" placeholder="Username" required></ion-input>
+        <ion-input [(ngModel)]="user.email" placeholder="Usuario" required></ion-input>
       </ion-item>
       <br>
       <ion-item>
-        <ion-input [(ngModel)]="user.password" placeholder="Password" type="password" required></ion-input>
+        <ion-input [(ngModel)]="user.password" placeholder="Contraseña" type="password" required></ion-input>
       </ion-item>
       <br>
-      <ion-button (click)="logUserIn()" color="success">Submit</ion-button>
-      <ion-button (click)="goToRegister()" color="secondary">Register</ion-button>
+      <ion-button (click)="logUserIn()" color="success">Ingresar</ion-button>
+      <ion-button (click)="goToRegister()" color="secondary">Registrarse</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
