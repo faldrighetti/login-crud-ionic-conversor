@@ -8,7 +8,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
   <div id="container">
     <ion-input id="user-salary" type="number" [(ngModel)]="salary" (ngModelChange)="calculateConversion()"></ion-input>
     <ul id="results">
@@ -16,5 +15,4 @@
     </ul>
     <ion-button id="sign-out-button" color="danger" (click)="signOut()">Cerrar sesión</ion-button>
   </div>
-
 </ion-content>
