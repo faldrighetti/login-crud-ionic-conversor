@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -12,22 +13,18 @@ export class HomePage {
   currencies = ['USD', 'BRL', 'EUR', 'GBP', 'JPY'];
   base = 'ARS';
 
-  constructor(private router: Router, public ngFireAuth: AngularFireAuth){}
+  constructor(private router: Router, public ngFireAuth: AngularFireAuth, private http: HttpClient){}
 
   salary: number = 0;
   results: number = 0;
+  exchangeRates: any = {};
 
-  calculateConversion(){
-    this.results = this.salary + 10;
-    return this.results;
-  }
+  convertSalaries() {
+    const apiUrl = 'https://api.exchangerate.host/latest?base=ARS&symbols=USD,EUR,BRL,GBP,JPY';
 
-  calculate2(currencies: string){
-    for(let i = 0; i < currencies.length; i++){
-      //call API
-      //Calcular salario * ratio en currencies[i] con base ARS  
-      //return resultado
-    }
+    this.http.get(apiUrl).subscribe((data: any) => {
+      this.exchangeRates = data.rates;
+    });
   }
 
   signOut(){

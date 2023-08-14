@@ -9,9 +9,23 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <ion-input id="user-salary" type="number" [(ngModel)]="salary" (ngModelChange)="calculateConversion()"></ion-input>
+    <ion-input id="user-salary" type="number" [(ngModel)]="salary" (ngModelChange)="convertSalaries()"></ion-input>
     <ul id="results">
-      <li *ngFor="let currency of currencies"> Cambio a {{currency}}: ${{salary}} </li>
+      <ion-item *ngIf="exchangeRates">
+        <ion-label>El salario en dólares es: ${{ salary * exchangeRates.USD | number:'1.2-2' }}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="exchangeRates">
+        <ion-label>El salario en euros es: ${{ salary * exchangeRates.EUR | number:'1.2-2' }}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="exchangeRates">
+        <ion-label>El salario en reales es: ${{ salary * exchangeRates.BRL | number:'1.2-2' }}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="exchangeRates">
+        <ion-label>El salario en libras es: ${{ salary * exchangeRates.GBP | number:'1.2-2' }}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="exchangeRates">
+        <ion-label>El salario en yenes es: ${{ salary * exchangeRates.JPY | number:'1.2-2' }}</ion-label>
+      </ion-item>
     </ul>
     <ion-button id="sign-out-button" color="danger" (click)="signOut()">Cerrar sesión</ion-button>
   </div>
