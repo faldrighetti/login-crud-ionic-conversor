@@ -7,6 +7,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
 
   user = {
@@ -14,10 +15,9 @@ export class LoginPage implements OnInit {
     password: ''
   }
 
-  constructor(private router: Router, public ngFireAuth: AngularFireAuth) { }
+  constructor(private router: Router, public ngFireAuth: AngularFireAuth){ }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   goToRegister(){
     this.router.navigate(['/register']);
@@ -32,5 +32,4 @@ export class LoginPage implements OnInit {
       alert('Login failed');
     }
   }
-
 }
