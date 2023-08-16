@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'conversor-de-salario',
+  appId: 'com.conversordesalario.app',
+  appName: 'Conversor de salario',
   webDir: 'www',
   server: {
     androidScheme: 'https'
