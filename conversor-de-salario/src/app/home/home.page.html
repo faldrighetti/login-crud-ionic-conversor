@@ -10,6 +10,7 @@
 <ion-content [fullscreen]="true">
   <div id="container">
     <ion-input id="user-salary" type="number" [(ngModel)]="salary" (ngModelChange)="convertSalaries()"></ion-input>
+    <ion-label id="label-input">Ingrese la cantidad a convertir (en pesos argentinos).</ion-label>
     <ul id="results">
       <ion-item *ngIf="exchangeRates">
         <ion-label>El salario en dólares es: ${{ salary * exchangeRates.USD | number:'1.2-2' }}</ion-label>
