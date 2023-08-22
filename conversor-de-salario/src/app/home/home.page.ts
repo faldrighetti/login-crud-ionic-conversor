@@ -3,6 +3,11 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { HttpClient } from '@angular/common/http';
 
+interface Currency {
+  name: string,
+  rate: number
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -10,10 +15,41 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePage {
 
+  constructor(private router: Router, public ngFireAuth: AngularFireAuth, private http: HttpClient){}
+
   currencies = ['USD', 'BRL', 'EUR', 'GBP', 'JPY'];
   base = 'ARS';
 
-  constructor(private router: Router, public ngFireAuth: AngularFireAuth, private http: HttpClient){}
+  currencies2: Currency[] = [];
+
+  /*
+  text: currency.name
+  data: {
+    action: push
+  }
+  */
+
+  public actionSheetButtons = [
+    {
+      text: 'EUR',
+      data: {
+        action: ''
+      },
+    },
+    {
+      text: 'ISK',
+      data: {
+        action: '',
+      },
+    },
+    {
+      text: 'JPY',
+      role: '',
+      data: {
+        action: '',
+      },
+    },
+  ];
 
   salary: number = 0;
   results: number = 0;
