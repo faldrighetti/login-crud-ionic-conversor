@@ -18,14 +18,6 @@ export class RegisterPage implements OnInit {
   regexPassword = /^(?=.*\d)(?=.*[a-z])[a-zA-Z\d]{8,20}$/
   //Entre 8 y 20 caracteres, con al menos un número
 
-  validatePassword(password: string){
-    if(this.checkPassword(password)){
-      this.register()
-    } else{
-      this.presentAlert('Error', 'Usuario y/o contraseña inválidos');
-    }
-  }
-
   checkPassword(password: string): boolean{
     return this.regexPassword.test(password);
   }

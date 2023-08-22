@@ -35,7 +35,7 @@
       </ul>
 
       <br>
-      <ion-button (click)="validatePassword(user.password)" color="success" [disabled]="!user.email || !user.password">Registrar</ion-button>
+      <ion-button (click)="register()" color="success" [disabled]="!user.email || !checkPassword(user.password)">Registrar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
